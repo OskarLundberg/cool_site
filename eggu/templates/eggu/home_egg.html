@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}Eggu{% endblock %}
+
+{% block content %}
+    <h1>Je moet eten of anders sterf je.</h1>
+    <img src="{{ sandwich.image.url }}" width="700" alt="Lennys Sandwich">
+
+    <h2>Ingredients</h2>
+    {% for ingredient in sandwich.ingredient_set.all %}
+    <h3><a href="{% url 'eggu:detail' pk=ingredient.pk %}">{{ ingredient.title }}</a></h3>
+    {% endfor %}
+
+{% endblock %}
+

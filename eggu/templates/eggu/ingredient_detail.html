@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ ingredient.title }}
+{% endblock %}
+
+{% block content %}
+    <img src="{{ ingredient.image.url }}" width="700" alt="gamer ingredient">
+    <h3>{{ ingredient.description|linebreaks }}</h3>
+{% endblock %}
