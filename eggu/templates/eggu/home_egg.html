@@ -6,9 +6,13 @@
     <img src="{{ sandwich.image.url }}" width="700" alt="Lennys Sandwich">
 
     <h2>Ingredients</h2>
+    <div class="cards">
     {% for ingredient in sandwich.ingredient_set.all %}
-    <h3><a href="{% url 'eggu:detail' pk=ingredient.pk %}">{{ ingredient.title }}</a></h3>
+        <div class="card">
+        <h3><a href="{% url 'eggu:detail' pk=ingredient.pk %}">{{ ingredient.title }}</a></h3>
+        </div>
     {% endfor %}
+    </div>
 
 {% endblock %}
 

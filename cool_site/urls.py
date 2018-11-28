@@ -25,6 +25,7 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path("", views.homepage, name="home"),
+    path("suggest", views.suggestion_view, name="suggest"),
     path("", include("eggu.urls"))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -10,7 +10,11 @@
 <h1>Je moet eten of anders sterf je.</h1>
 {% block content %}{% endblock %}
 
-<p>Do you have any improvements idéas for the next time Lenny is gonna make a sandwich?</p>
-<p>Don't hesitate to contact us at: {{ "MicrowavedHotDog@egg.com"|urlize }}</p>
+<p>
+    Do you have any improvements idéas for the next time Lenny is gonna make a sandwich?
+    Feel free to fill in our <a href="{% url 'suggest' %}">suggestion form!</a>
+</p>
+
+<p>Do you have any questions? Don't hesitate to contact us at: {{ "MicrowavedHotDog@egg.com"|urlize }}</p>
 </body>
 </html>
