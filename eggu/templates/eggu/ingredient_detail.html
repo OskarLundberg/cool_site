@@ -1,10 +1,24 @@
 {% extends "layout.html" %}
+{% load static from staticfiles %}
 
 {% block title %}
     {{ ingredient.title }}
 {% endblock %}
 
 {% block content %}
+    <p></p>
+    {% if ingredient.image %}
     <img src="{{ ingredient.image.url }}" width="700" alt="gamer ingredient">
+    {% else %}
+    <div>
+        <img src="{% static 'eggu/Question_mark.png' %}" width="400" alt="gamer ingredient">
+        <p>The person who added this ingredient didn't upload a picture, feel free to add one yourself though</p>
+    </div>
+    {% endif %}
+
     <h3>{{ ingredient.description|linebreaks }}</h3>
+    {% if user.is_authenticated %}
+        <hr>
+        <h2><a href="{% url 'eggu:edit_ingredient' ingredient_pk=ingredient.pk %}">Edit ingredient</a></h2>
+    {% endif %}
 {% endblock %}

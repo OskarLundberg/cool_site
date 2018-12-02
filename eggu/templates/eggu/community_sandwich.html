@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% load eggu_extras %}
+
+{% block title %}Eggu | Community Sandwich{% endblock %}
+
+{% block content %}
+    <h1>{{ sandwich.title }}</h1>
+    <div>
+        <img src="{{ sandwich.image.url }}" width="700" alt="Community Sandwich">
+            <h1 class="Buzzwords">Love  Compassion  Community</h1>
+            {% random_quote %}
+    </div>
+    <h2>Ingredients</h2>
+    <div class="cards">
+    {% for ingredient in sandwich.ingredient_set.all %}
+        <div class="card">
+        <h3><a href="{% url 'eggu:detail' pk=ingredient.pk %}">{{ ingredient.title }}</a></h3>
+        </div>
+    {% endfor %}
+    {% if user.is_authenticated %}
+        <hr>
+        <h2><a href="{% url 'eggu:create_ingredient' %}">Add an ingredient to this masterpiece</a></h2>
+    {% endif %}
+    </div>
+
+{% endblock %}

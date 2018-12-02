@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ ingredient.title|default:"Make an ingredient" }} | Community Sandwich
+{% endblock %}
+
+{% block content %}
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <input type="submit" class="button">
+    </form>
+    <hr>
+    {% if user.is_authenticated and form.instance.pk %}
+        <a href="#">Edit</a>
+    {% endif %}
+{% endblock %}

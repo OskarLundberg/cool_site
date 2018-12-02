@@ -8,8 +8,12 @@
     <link rel="stylesheet" href="{% static 'css/layout.css' %}">
 <body>
 <h1>Je moet eten of anders sterf je.</h1>
+<div>
+    <a href="{% url 'eggu:home' %}">Lenny's Sandwhich</a> |
+    <a href="{% url 'eggu:community_sandwich' %}">Community Sandwhich</a>
+</div>
 {% block content %}{% endblock %}
-
+<hr>
 <p>
     Do you have any improvements idéas for the next time Lenny is gonna make a sandwich?
     Feel free to fill in our <a href="{% url 'suggest' %}">suggestion form!</a>
