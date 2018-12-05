@@ -14,7 +14,10 @@ def home_egg(request):
 
 def ingredient_detail(request, pk):
     ingredient = Ingredient.objects.get(pk=pk)
-    return render(request, "eggu/ingredient_detail.html", {"ingredient": ingredient})
+    c_sandwich = get_object_or_404(Sandwich, pk=2)
+    return render(request, "eggu/ingredient_detail.html", {
+        "ingredient": ingredient,
+        "c_sandwich": c_sandwich})
 
 
 def community_sandwich(request):
@@ -44,13 +47,14 @@ def create_ingredient(request):
 def edit_ingredient(request, ingredient_pk):
     """lets a logged in user to edit the ingredients in the Community Sandwich"""
     # Still need to make it so the image gets deleted if the ingredient gets deleted
+    # or if the image just gets changed (in editing)
     ingredient = get_object_or_404(Ingredient, pk=ingredient_pk)
     form = forms.IngredientForm(instance=ingredient)
 
     if request.method == "POST":
         form = forms.IngredientForm(request.POST, request.FILES, instance=ingredient)
         if form.is_valid():
-            ingredient = form.save(commit=False)
+            form.save()
             return HttpResponseRedirect(reverse("eggu:community_sandwich"))
 
     return render(request, "eggu/ingredient_form.html", {"form": form})
