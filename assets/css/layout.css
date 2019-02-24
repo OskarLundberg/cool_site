@@ -1,3 +1,293 @@
-h2 {
-    color: red;
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
 }
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+	position:relative; /* needed for footer positioning*/
+	margin:0 auto; /* center, not in IE5 */
+
+	height:auto !important; /* real browsers */
+	height:100%; /* IE6: treaded as min-height*/
+
+	min-height:100%; /* real browsers */
+
+	background-color: rgb(242, 242, 242);    /* add a bit of a gradient? */
+}
+
+header {
+	width : 100%;
+	height : 110px;
+    background : rgba(153, 136, 116, 1);
+}
+
+.logo1
+{
+	background-image : url(image.png);
+	background-repeat : no-repeat;
+	position : absolute ;
+	left : 99px;
+	top : 7px;
+	width : 362px;
+	height : 96px;
+
+	transition: transform .2s; /* Animation */
+}
+
+.logo1:hover {
+    transform: scale(1.02); /* (110% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+nav
+{
+	background-color: rgba(181, 165, 140, 1);
+	position : absolute ;
+	right : 99px;
+	top : 15px;
+	width : 611px;
+	height : 78px;
+	text-align: center;
+}
+
+
+.link
+{
+	font-family : Georgia;
+	/*font-size : 24px;*/
+	font-size: 27px;
+	color : rgb(242, 242, 242);
+
+	display:inline-block;
+    padding-top: 20px;
+}
+
+
+
+#main {
+    display: flex;
+}
+
+main {
+    padding-bottom: 110px; /* Needs to be same as footer height */
+    /*background-color: rgb(242, 242, 242);  /* add a bit of a gradient? */
+}
+
+#kek {
+    padding-left: 100px;
+    background-image: url( '../backgrounds/opt_board_background_2.jpg' );
+    background-size: cover;
+    width: 50%;
+    /*padding-bottom: 933px;  /* This line is a really bad solution */
+    padding-bottom: calc(100% - 122.4vh); /* This line is a really bad solution aswell */
+}
+
+.sandwich, .community-sandwich
+{
+	position : absolute ;
+	left : 98px;  /* Changed it to 98, from 100*/
+	/*top : 305px;*/
+	top: 320px;
+	/*width : 579px;
+	height : 586px;*/
+    width : 30%;
+}
+
+.community-sandwich {
+    width: 36%;
+    left : 38px;
+    top: 275px;
+}
+
+#kek2 {
+    padding-left: 100px;
+    background-image: url( '../backgrounds/opt_paper_background.jpg' );
+    background-size: cover;
+    width: 50%;
+}
+
+footer
+{
+	background : rgba(153, 136, 116, 1);
+	left : 0px;
+	bottom: 0;
+	width : 100%;
+	height : 110px;
+
+    position: absolute;
+}
+
+h1
+{
+	font-family : Georgia;
+	font-weight : bold;
+	font-size : 60px;
+	color : #333333;
+	color : rgb(51, 51, 51);
+}
+
+
+h2
+{
+	font-family : Georgia;
+	font-weight : bold;
+	font-size : 48px;
+	color : #333333;
+	color : rgb(51, 51, 51);
+}
+
+h3
+{
+    font-family : Georgia;
+    font-size : 18px;
+    color : #F9F4F5;
+    color : rgb(249, 244, 245);
+}
+
+.ingredient
+{
+	font-family : Georgia;
+	font-size : 38px;
+	color : #333333;
+	color : rgb(51, 51, 51);
+
+	margin-bottom: 17px;
+}
+
+.man-logo
+{
+	position : absolute ;
+	/*left : 1480px;
+	top : 646px;*/
+	/*width : 338px;*/
+	/*width: 30%;*/
+	/*height : 340px;*/
+	height: 30vh;
+	right: 100px;
+	bottom: 95px;
+
+	transition: transform .2s; /* Animation */
+}
+
+.man-logo:hover {
+    transform: scale(1.1);
+    /*transform: rotate(5620deg);*/
+}
+
+.footer-text {
+    margin-left: 100px;
+}
+
+.top-footer-text {
+    margin-top: 35px;
+}
+
+.github-logo
+{
+  /*position : relative ;*/
+  /*left : 1632px;*/
+  position: absolute;
+  right: 100px;
+  width : 187px;
+  bottom : 30px;
+  height : 50px;
+
+  transition: transform .2s; /* Animation */
+}
+
+.github-logo:hover {
+    transform: scale(1.1); /* (110% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.poop1 {
+    margin-top: 35px;
+    margin-bottom: 18px;
+}
+
+.poop2 {
+    margin-top: 117px;
+    margin-bottom: 70px;
+}
+
+a:hover {
+  color: #415860;
+}
+
+#ingredient-description {
+    color: rgb(51, 51, 51);
+    margin-left: 200px;
+    margin-right: 200px;
+    /*max-width: 700px;*/
+    margin-top: 5px;
+}
+
+#ingredient-image, #ingredient-image-form {
+    min-height: 500px;
+    max-height: 600px;
+    width: auto;
+}
+
+#ingredient-image-form {
+    border: 1px solid black;
+    margin-right: 100px;
+}
+
+.ingredient-content-section {
+    /*margin-left: 100px;*/
+    text-align: center;
+    margin-top: 6vh;
+}
+
+form {
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+
+#form-flex-section {
+    display: flex;
+}
+
+form p {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.button {
+
+}
+
+#add-ingredient {
+    max-width: 40%;
+    bottom: 150px;
+    position: absolute
+}
+
+.Buzzwords {
+    color : rgb(51, 51, 51);
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+cite p{
+    color : rgb(51, 51, 51);
+    font-size: 18px;
+}
+
+.margin-left-100 {
+    margin-left: 100px;
+}
+
+.margin-top-50 {
+    margin-top: 50px;
+}
+
+
+

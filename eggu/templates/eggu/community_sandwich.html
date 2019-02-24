@@ -1,26 +1,38 @@
 {% extends "layout.html" %}
+{% load static from staticfiles %}
 {% load eggu_extras %}
 
 {% block title %}Eggu | Community Sandwich{% endblock %}
 
 {% block content %}
-    <h1>{{ sandwich.title }}</h1>
-    <div>
-        <img src="{{ sandwich.image.url }}" width="700" alt="Community Sandwich">
-            <h1 class="Buzzwords">Love  Compassion  Community</h1>
-            {% random_quote %}
+<div id="main">
+    <div id="kek">
+        <h2 class="poop1">Je moet eten of anders sterf je</h2>
+        <h1>{{ sandwich.title }}</h1>
+        <img class="community-sandwich" src="{{ sandwich.image.url }}" alt="Community Sandwich">
+
+        {% if user.is_authenticated %}
+            <h2 id="add-ingredient"><a href="{% url 'eggu:create_ingredient' %}">Add an ingredient to this masterpiece</a></h2>
+        {% endif %}
     </div>
-    <h2>Ingredients</h2>
-    <div class="cards">
-    {% for ingredient in sandwich.ingredient_set.all %}
-        <div class="card">
-        <h3><a href="{% url 'eggu:detail' pk=ingredient.pk %}">{{ ingredient.title }}</a></h3>
+
+    <div id="kek2">
+        <h2 class="poop2">Ingredients</h2>
+        <div>
+        {% for ingredient in sandwich.ingredient_set.all %}
+            <div>
+                <p class="ingredient"><a class="ingredient" href="{% url 'eggu:detail' pk=ingredient.pk %}">{{ ingredient.title }}</a></p>
+            </div>
+        {% endfor %}
         </div>
-    {% endfor %}
-    {% if user.is_authenticated %}
-        <hr>
-        <h2><a href="{% url 'eggu:create_ingredient' %}">Add an ingredient to this masterpiece</a></h2>
-    {% endif %}
+
+        <h1 class="Buzzwords">Love  Compassion  Community</h1>
+        <cite><p>{% random_quote %}</p></cite>
+
+        <!--<a href="https://www.instagram.com/moylennard/" target="_blank">
+            <img class="man-logo" src="{% static 'eggu/logo.svg' %}" alt="logo">-->
+        </a>
     </div>
+</div>
 
 {% endblock %}

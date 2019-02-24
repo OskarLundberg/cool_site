@@ -2,23 +2,38 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/layout.css' %}">
-<body>
-<h1>Je moet eten of anders sterf je.</h1>
-<div>
-    <a href="{% url 'eggu:home' %}">Lenny's Sandwhich</a> |
-    <a href="{% url 'eggu:community_sandwich' %}">Community Sandwhich</a>
-</div>
-{% block content %}{% endblock %}
-<hr>
-<p>
-    Do you have any improvements idéas for the next time Lenny is gonna make a sandwich?
-    Feel free to fill in our <a href="{% url 'suggest' %}">suggestion form!</a>
-</p>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+    </head>
 
-<p>Do you have any questions? Don't hesitate to contact us at: {{ "MicrowavedHotDog@egg.com"|urlize }}</p>
-</body>
+    <body>
+    <div id="container">
+        <header>
+            <a href="{% url 'eggu:home' %}">
+                <img class="logo1" src="{% static 'eggu/logo_text.svg' %}" alt="logo_text">
+            </a>
+
+            <nav>
+            <a class="link" href="{% url 'eggu:home' %}">Lenny's Sandwhich</a>  |
+            <a class="link" href="{% url 'eggu:community_sandwich' %}">Community Sandwhich</a>
+            </nav>
+        </header>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+
+
+        <footer>
+            <h3 class="top-footer-text footer-text">
+                Do you have any improvements idéas for the next time Lenny is gonna make a sandwich?
+                Feel free to fill in our <a href="{% url 'suggest' %}">suggestion form!</a>
+            </h3>
+            <h3 class="footer-text">Do you have any questions? Don't hesitate to contact us at: {{ "MicrowavedHotDog@egg.com"|urlize }}</h3>
+            <a href="https://github.com/OskarLundberg" target="_blank"><img class="github-logo" src="{% static 'eggu/github.svg' %}" alt="github_logo"></a>
+        </footer>
+    </div>
+    </body>
 </html>

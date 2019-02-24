@@ -6,9 +6,9 @@
 {% endblock %}
 
 {% block content %}
-    <p></p>
+<section class="ingredient-content-section">
     {% if ingredient.image %}
-    <img src="{{ ingredient.image.url }}" width="700" alt="gamer ingredient">
+    <img src="{{ ingredient.image.url }}" width="700" alt="gamer ingredient" id="ingredient-image">
     {% else %}
     <div>
         <img src="{% static 'eggu/Question_mark.png' %}" width="400" alt="gamer ingredient">
@@ -16,9 +16,15 @@
     </div>
     {% endif %}
 
-    <h3>{{ ingredient.description|linebreaks }}</h3>
+    <div>
+        <h3 id="ingredient-description">{{ ingredient.description|linebreaks }}</h3>
+    </div>
+
     {% if user.is_authenticated and ingredient.Sandwich == c_sandwich %}
+        <br>
         <hr>
+        <br>
         <h2><a href="{% url 'eggu:edit_ingredient' ingredient_pk=ingredient.pk %}">Edit ingredient</a></h2>
     {% endif %}
+</section>
 {% endblock %}

@@ -1,19 +1,32 @@
 {% extends "layout.html" %}
+{% load static from staticfiles %}
 
 {% block title %}Eggu{% endblock %}
 
 {% block content %}
-    <h1>{{ sandwich.title }}</h1>
-    <img src="{{ sandwich.image.url }}" width="700" alt="Lennys Sandwich">
+<div id="main">
+    <!--<img class="board_img" src="{% static 'eggu/opt_board_background_2.jpg' %}" alt="board background">
+    <img class="image4" src="{% static 'eggu/opt_paper_background.jpg' %}" alt="paper background">-->
 
-    <h2>Ingredients</h2>
-    <div class="cards">
-    {% for ingredient in sandwich.ingredient_set.all %}
-        <div class="card">
-        <h3><a href="{% url 'eggu:detail' pk=ingredient.pk %}">{{ ingredient.title }}</a></h3>
-        </div>
-    {% endfor %}
+    <div id="kek">
+        <h2 class="poop1">Je moet eten of anders sterf je</h2>
+        <h1>{{ sandwich.title }}</h1>
+        <img class="sandwich" src="{{ sandwich.image.url }}" alt="Lennys Sandwich">
     </div>
 
+    <div id="kek2">
+        <h2 class="poop2">Ingredients</h2>
+        <div>
+        {% for ingredient in sandwich.ingredient_set.all %}
+            <div>
+                <p class="ingredient"><a class="ingredient" href="{% url 'eggu:detail' pk=ingredient.pk %}">{{ ingredient.title }}</a></p>
+            </div>
+        {% endfor %}
+        </div>
+        <a href="https://www.instagram.com/moylennard/" target="_blank">
+            <img class="man-logo" src="{% static 'eggu/logo.svg' %}" alt="logo">
+        </a>
+    </div>
+</div>
 {% endblock %}
 

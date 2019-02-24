@@ -3,8 +3,8 @@
 {% block title %}Suggest an idea!{% endblock %}
 
 {% block content %}
-    <h1>Hey there!</h1>
-    <div class="cards">
+    <h1 class="margin-left-100 margin-top-50">Hey there!</h1>
+    <div>
         <form action="" method="POST">
             {{ form.as_p }}
             {% csrf_token %}
