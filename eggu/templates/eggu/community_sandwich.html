@@ -9,7 +9,7 @@
     <div id="kek">
         <h2 class="poop1">Je moet eten of anders sterf je</h2>
         <h1>{{ sandwich.title }}</h1>
-        <img class="community-sandwich" src="{{ sandwich.image.url }}" alt="Community Sandwich">
+        <img class="community-sandwich" src="{{ sandwich.image.url }}" alt="Community Sandwich" title="{{ sandwich.description }}">
 
         {% if user.is_authenticated %}
             <h2 id="add-ingredient"><a href="{% url 'eggu:create_ingredient' %}">Add an ingredient to this masterpiece</a></h2>

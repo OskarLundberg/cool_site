@@ -6,8 +6,8 @@
     <h1 class="margin-left-100 margin-top-50">Hey there!</h1>
     <div>
         <form action="" method="POST">
-            {{ form.as_p }}
             {% csrf_token %}
+            {{ form.as_p }}
             <input type="submit" class="button">
         </form>
     </div>

@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+/* Element Selectors */
 * {
     margin: 0;
     padding: 0;
@@ -11,41 +12,10 @@ html, body {
     padding: 0;
 }
 
-#container {
-	position:relative; /* needed for footer positioning*/
-	margin:0 auto; /* center, not in IE5 */
-
-	height:auto !important; /* real browsers */
-	height:100%; /* IE6: treaded as min-height*/
-
-	min-height:100%; /* real browsers */
-
-	background-color: rgb(242, 242, 242);    /* add a bit of a gradient?  rgb(229, 229, 229)*/
-	background-image: linear-gradient(to right, rgb(246, 246, 246), rgb(207, 207, 207));
-
-}
-
 header {
 	width : 100%;
 	height : 110px;
     background : rgba(153, 136, 116, 1);
-}
-
-.logo1
-{
-	background-image : url(image.png);
-	background-repeat : no-repeat;
-	position : absolute ;
-	left : 99px;
-	top : 7px;
-	width : 362px;
-	height : 96px;
-
-	transition: transform .2s; /* Animation */
-}
-
-.logo1:hover {
-    transform: scale(1.02); /* (110% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
 nav
@@ -59,85 +29,20 @@ nav
 	text-align: center;
 }
 
-
-.link
-{
-	font-family : Georgia;
-	/*font-size : 24px;*/
-	font-size: 27px;
-	color : rgb(242, 242, 242);
-
-	display:inline-block;
-    padding-top: 20px;
-}
-
-
-
-#main {
-    display: flex;
-}
-
 main {
     padding-bottom: 110px; /* Needs to be same as footer height */
     /*background-color: rgb(242, 242, 242);  /* add a bit of a gradient? */
-}
-
-#kek {
-    padding-left: 100px;
-    background-image: url( '../backgrounds/opt_board_background_2.jpg' );
-    background-size: cover;
-    width: 50%;
-    height: calc(100vh - 220px);
-    min-height: 722px;  /* checked the height of the kek2 in chrome developer section  */
-}
-
-.sandwich, .community-sandwich
-{
-	position : absolute ;
-	left : 98px;
-	top: 320px;
-    width : 26%;
-
-    max-height: calc(100% - 450px);
-
-	/*position : absolute ;*/
-	/*left : 98px;
-	top: 320px;
-	margin-top: 40px;
-    max-height: calc(100% - 200px);*/
-}
-
-.community-sandwich {
-    width: 36%;
-    left : 38px;
-    top: 275px;
-}
-
-#kek2 {
-    padding-left: 100px;
-    background-image: url( '../backgrounds/opt_paper_background.jpg' );
-    background-size: cover;
-    width: 50%;
-}
-
-footer
-{
-	background : rgba(153, 136, 116, 1);
-	left : 0px;
-	bottom: 0;
-	width : 100%;
-	height : 110px;
-
-    position: absolute;
 }
 
 h1
 {
 	font-family : Georgia;
 	font-weight : bold;
-	font-size : 60px;
+	font-size : 3.75rem; /*60px;*/
+	/*font-size : 60px;*/
 	color : #333333;
 	color : rgb(51, 51, 51);
+
 }
 
 
@@ -158,6 +63,143 @@ h3
     color : rgb(249, 244, 245);
 }
 
+footer
+{
+	background : rgba(153, 136, 116, 1);
+	left : 0px;
+	bottom: 0;
+	width : 100%;
+	height : 110px;
+
+    position: absolute;
+}
+
+form {
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+form p {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+cite p{
+    color : rgb(51, 51, 51);
+    font-size: 18px;
+}
+
+
+    /* ID SELECTORS */
+#container {
+	position:relative; /* needed for footer positioning*/
+	margin:0 auto; /* center, not in IE5 */
+
+	height:auto !important; /* real browsers */
+	height:100%; /* IE6: treaded as min-height*/
+
+	min-height:100%; /* real browsers */
+
+	background-color: rgb(242, 242, 242);    /* add a bit of a gradient?  rgb(229, 229, 229)*/
+	background-image: linear-gradient(to right, rgb(246, 246, 246), rgb(207, 207, 207));
+}
+
+#main {
+    display: flex;
+}
+
+#kek {
+    padding-left: 100px;
+    background-image: url( '../backgrounds/opt_board_background_2.jpg' );
+    background-size: cover;
+    width: 50%;
+    height: calc(100vh - 220px);
+    min-height: 722px;  /* checked the height of the kek2 in chrome developer section  */
+
+    /*min-width: 50vmax;*/
+    overflow: hidden;
+}
+
+#kek2 {
+    padding-left: 100px;
+    background-image: url( '../backgrounds/opt_paper_background.jpg' );
+    background-size: cover;
+    width: 50%;
+}
+
+#form-flex-section {
+    display: flex;
+}
+
+#ingredient-description {
+    color: rgb(51, 51, 51);
+    margin-left: 200px;
+    margin-right: 200px;
+    /*max-width: 700px;*/
+    margin-top: 5px;
+}
+
+#ingredient-image, #ingredient-image-form {
+    min-height: 500px;
+    max-height: 600px;
+    width: auto;
+}
+
+#ingredient-image-form {
+    border: 1px solid black;
+    margin-right: 100px;
+}
+
+#add-ingredient {
+    max-width: 40%;
+    bottom: 150px;
+    position: absolute
+}
+
+
+    /* Class Selectors */
+.logo1
+{
+	background-image : url(image.png);
+	background-repeat : no-repeat;
+	position : absolute ;
+	left : 99px;
+	top : 7px;
+	width : 362px;
+	height : 96px;
+
+	transition: transform .2s; /* Animation */
+}
+
+.link
+{
+	font-family : Georgia;
+	/*font-size : 24px;*/
+	font-size: 27px;
+	color : rgb(242, 242, 242);
+
+	display:inline-block;
+    margin-top: 20px;
+
+}
+
+.sandwich, .community-sandwich
+{
+	position : absolute ;
+	left : 98px;
+	top: 320px;
+    width : 26%;
+
+    max-height: calc(100% - 450px);
+}
+
+.sandwich_new, .community-sandwich_new
+{
+    margin-top: 30px;
+    max-width: 100%;
+    border: 1px solid red;
+}
+
 .ingredient
 {
 	font-family : Georgia;
@@ -167,30 +209,6 @@ h3
 
 	margin-bottom: 17px;
 }
-
-
-.meme a img{
-    /*transition-delay:10s;
-    transition: transform 10s;*/
-
-    transition: opacity 4s ease-in-out;
-   -moz-transition: opacity 4s ease-in-out;
-   -webkit-transition: opacity 4s ease-in-out;
-}
-
-.meme:hover a img{
-    transition-delay:10s;
-    transform: scale(1.1);
-    opacity: 0
-
-}
-
-.meme:hover > img{
-    /*transition-delay:10s;*/
-    transform: scale(1.1);
-    opacity: 1;
-}
-
 
 .man-logo
 {
@@ -215,12 +233,11 @@ h3
     height: 307px;
 	/*height: 27vh;*/
 	/*right: calc(100px + 1vw);*/
-	right: 116px;
+	right: 146px;
 	bottom: 96px;
 	opacity: 1;
 
 }
-
 
 .footer-text {
     margin-left: 100px;
@@ -236,15 +253,11 @@ h3
   /*left : 1632px;*/
   position: absolute;
   right: 100px;
-  width : 187px;
-  bottom : 30px;
-  height : 50px;
+  /*width : 187px;*/
+  bottom : 20px;
+  /*height : 50px;*/
 
   transition: transform .2s; /* Animation */
-}
-
-.github-logo:hover {
-    transform: scale(1.1); /* (110% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
 .poop1 {
@@ -257,69 +270,16 @@ h3
     margin-bottom: 70px;
 }
 
-a:hover {
-  color: #415860;
-}
-
-#ingredient-description {
-    color: rgb(51, 51, 51);
-    margin-left: 200px;
-    margin-right: 200px;
-    /*max-width: 700px;*/
-    margin-top: 5px;
-}
-
-#ingredient-image, #ingredient-image-form {
-    min-height: 500px;
-    max-height: 600px;
-    width: auto;
-}
-
-#ingredient-image-form {
-    border: 1px solid black;
-    margin-right: 100px;
-}
-
 .ingredient-content-section {
     /*margin-left: 100px;*/
     text-align: center;
     margin-top: 6vh;
 }
 
-form {
-    margin-left: 100px;
-    margin-top: 50px;
-}
-
-
-#form-flex-section {
-    display: flex;
-}
-
-form p {
-    margin-bottom: 10px;
-    font-size: 20px;
-}
-
-.button {
-
-}
-
-#add-ingredient {
-    max-width: 40%;
-    bottom: 150px;
-    position: absolute
-}
-
 .Buzzwords {
     color : rgb(51, 51, 51);
     margin-top: 50px;
     margin-bottom: 10px;
-}
-
-cite p{
-    color : rgb(51, 51, 51);
-    font-size: 18px;
 }
 
 .margin-left-100 {
@@ -329,6 +289,45 @@ cite p{
 .margin-top-50 {
     margin-top: 50px;
 }
+
+.meme a img{
+    /*transition-delay:10s;
+    transition: transform 10s;*/
+
+    transition: opacity 4s ease-in-out;
+   -moz-transition: opacity 4s ease-in-out;
+   -webkit-transition: opacity 4s ease-in-out;
+}
+
+/* Pseudo-class Selectors */
+.logo1:hover {
+    transform: scale(1.02); /* (110% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.meme:hover a img{
+    transition-delay:10s;
+    transform: scale(1.1);
+    opacity: 0
+
+}
+
+.meme:hover > img{
+    /*transition-delay:10s;*/
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.github-logo:hover {
+    transform: scale(1.1); /* (110% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+a:hover {
+  color: #415860;
+}
+
+
+
+
 
 
 

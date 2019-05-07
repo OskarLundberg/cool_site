@@ -6,6 +6,7 @@
         <meta charset="UTF-8">
         <title>{% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+        <link rel="shortcut icon" type="image/png" href="{% static 'img/logo_man.png' %}"/>
     </head>
 
     <body>
@@ -32,7 +33,7 @@
                 Feel free to fill in our <a href="{% url 'suggest' %}">suggestion form!</a>
             </h3>
             <h3 class="footer-text">Do you have any questions? Don't hesitate to contact us at: {{ "MicrowavedHotDog@egg.com"|urlize }}</h3>
-            <a href="https://github.com/OskarLundberg" target="_blank"><img class="github-logo" src="{% static 'eggu/github.svg' %}" alt="github_logo"></a>
+            <a href="https://github.com/OskarLundberg" target="_blank"><img class="github-logo" src="{% static 'eggu/GitHub-Mark-64px.png' %}" alt="github_logo"></a>
         </footer>
     </div>
     </body>
